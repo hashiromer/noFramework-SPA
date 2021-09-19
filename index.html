@@ -19,9 +19,11 @@
         html {
 
             scroll-behavior: smooth;
+        }
 
-
-
+        .selection:not(:target):not(#home),
+        .selection:target~#home {
+            display: none
         }
 
         body {
@@ -59,6 +61,12 @@
             font-size: large;
             font-weight: 500;
         }
+
+        .nav a {
+            text-decoration: none;
+            color: #ffb700;
+        }
+
 
         .hero {
             display: grid;
@@ -148,64 +156,95 @@
 
 <body>
 
-    <div class="site">
+    <main class="site">
 
         <nav class="nav">
-            <h1 class="nav__title">Site Title</h1>
+            <h1 class="nav__title">
+                <a href="#home">Site Title</a>
+            </h1>
             <ul class="nav__list">
-                <li class="nav__item">Services</li>
-                <li class="nav__item">About Us</li>
-                <li class="nav__item">Blog</li>
+                <li class="nav__item">
+                    <a href="#Services">Services</a>
+                </li>
+                <li class="nav__item">
+                    <a href="#About_us">About Us</a>
+                </li>
+                <li class="nav__item">
+                    <a href="#Blog">Blog</a>
+                </li>
             </ul>
         </nav>
 
-        <div class="hero">
-            <h1>Position Sticky Subnav</h1>
-        </div>
-
-        <section id="Section1" class="section">
-            <h2>Section 1</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, minus laudantium excepturi incidunt
-                voluptate impedit quisquam. Dicta sed, ea perferendis consequuntur expedita nesciunt nam quae omnis
-                voluptatibus corporis. Voluptate, cumque?</p>
-        </section>
-
-        <div class="subnav">
-            <div class="subnav__container">
-                <div class="subnav__title">
-                    <h2>Sub Nav</h2>
-                </div>
-                <ul class="subnav__list">
-                    <li class="subnav__item">
-                        <a href="#Section1">Section 1</a>
-                    </li>
-                    <li class="subnav__item">
-                        <a href="#Section2">Section 2</a>
-                    </li>
-                    <li class="subnav__item">
-                        <a href="#Section3">Section 3</a>
-                    </li>
-                </ul>
+        <section class="selection" id="Services">
+            <div class="hero">
+                <h1>Services</h1>
             </div>
-        </div>
+        </section>
 
-        <section id="Section2" class="section">
-            <h2>Section 2</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, minus laudantium excepturi incidunt
-                voluptate impedit quisquam. Dicta sed, ea perferendis consequuntur expedita nesciunt nam quae omnis
-                voluptatibus corporis. Voluptate, cumque?</p>
+        <section class="selection" id="About_us">
+            <div class="hero">
+                <h1>About Us</h1>
+            </div>
         </section>
-        <section id="Section3" class="section">
-            <h2>Section 3</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, minus laudantium excepturi incidunt
-                voluptate impedit quisquam. Dicta sed, ea perferendis consequuntur expedita nesciunt nam quae omnis
-                voluptatibus corporis. Voluptate, cumque?</p>
+
+
+        <section class="selection" id="Blog">
+            <div class="hero">
+                <h1>Blog</h1>
+            </div>
         </section>
+
+        <section class="selection" id="home">
+            <div class="hero">
+                <h1>Hero Section</h1>
+            </div>
+
+            <section id="Section1" class="section">
+                <h2>Section 1</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, minus laudantium excepturi incidunt
+                    voluptate impedit quisquam. Dicta sed, ea perferendis consequuntur expedita nesciunt nam quae omnis
+                    voluptatibus corporis. Voluptate, cumque?</p>
+            </section>
+
+            <div class="subnav">
+                <div class="subnav__container">
+                    <div class="subnav__title">
+                        <h2>Sub Nav</h2>
+                    </div>
+                    <ul class="subnav__list">
+                        <li class="subnav__item">
+                            <a href="#Section1">Section 1</a>
+                        </li>
+                        <li class="subnav__item">
+                            <a href="#Section2">Section 2</a>
+                        </li>
+                        <li class="subnav__item">
+                            <a href="#Section3">Section 3</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <section id="Section2" class="section">
+                <h2>Section 2</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, minus laudantium excepturi incidunt
+                    voluptate impedit quisquam. Dicta sed, ea perferendis consequuntur expedita nesciunt nam quae omnis
+                    voluptatibus corporis. Voluptate, cumque?</p>
+            </section>
+            <section id="Section3" class="section">
+                <h2>Section 3</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, minus laudantium excepturi incidunt
+                    voluptate impedit quisquam. Dicta sed, ea perferendis consequuntur expedita nesciunt nam quae omnis
+                    voluptatibus corporis. Voluptate, cumque?</p>
+            </section>
+
+        </section>
+
 
         <footer>
             <p>Copyright ACME</p>
         </footer>
-    </div>
+    </main>
 
 </body>
 
